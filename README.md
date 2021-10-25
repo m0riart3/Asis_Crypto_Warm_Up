@@ -4,7 +4,7 @@
 
 ## Análisis del cifrado
 
-El código es un algoritmo por transposición, utiliza un número primo 'p' que obtiene usando la función getPrime() y genera una cadena de caracteres aleatorios imprimibles de longitud p - longitud de la flag. Para el algoritmo usa una congruencia lineal dada como ``` s**i mod(p)``` donde s es un entero random obtenido mediante la función getRandomNBitIntegrer(), i es una variable cuyo valor va desde 0 hasta p-1, tal y como se puede apreciar en el bucle for. 
+El código es un algoritmo por transposición, lo primero que necesitamos saber es que usa un número primo 'p' que obtiene usando la función getPrime() y genera una cadena de caracteres aleatorios imprimibles de longitud p - longitud de la flag. Para el algoritmo usa una congruencia lineal dada como ``` s**i mod(p)``` donde s es un entero random obtenido mediante la función getRandomNBitIntegrer(), i es una variable cuyo valor va desde 0 hasta p-1, tal y como se puede apreciar en el bucle for. 
 Tal y como se puede ver en el código, la string enc, cuyo valor será la flag encriptada tiene como primera letra la 'A' puesto que al inicializarla le da el valor del primer elemento del array msg, es decir la flag sin encriptar cuyo formato era ASIS{}.
 
 ![Codigo](https://github.com/m0riart3/Asis_Crypto_Warm_Up/blob/main/codigo.PNG)
@@ -17,3 +17,5 @@ Teniendo esas dos ideas ya podemos romper este cifrado, puesto que sabemos que l
 
 Para explicarlo mejor pondremos un ejemplo.
 Si sabemos que la letra 'I' ocupaba en la flag original la posición 3. Podemos calcular todas las 's' que den como resultado que la I este en la posición actual del archivo. Al hacerlo con 1 letra solo al haber varias 'I' en el archivo pues las posibilidades serán muchas, pero al juntar esas posibles 's' para que también den como salida que '{' estuviera en la posición 5, se reducirán bastante, y así se repite con varios carácteres para que de solo una posible 's' la buena.
+
+![Script](https://github.com/m0riart3/Asis_Crypto_Warm_Up/blob/main/Script.PNG)
